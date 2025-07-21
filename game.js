@@ -82,11 +82,11 @@ function turn(player, index) {
 }
 
 
-// let board = gameBoard()
-// let player1 = createPlayer("Player 1", "X")
-// let player2 = createPlayer("Player 2", "O")
+let board = gameBoard()
+let player1 = createPlayer("Player 1", "X")
+let player2 = createPlayer("Player 2", "O")
 
-// let currPlayer = player1
+let currPlayer = player1
 
 // while (true) {
 //     let input = Number(prompt("Enter the index where you would like to play your move"))
@@ -99,3 +99,55 @@ function turn(player, index) {
 
 //     currPlayer = currPlayer === player1 ? player2 : player1
 // }
+
+let handleDisplay = () => {
+    let game = true
+    const addToCell = () => {
+        
+        let boardGrid = document.querySelector(".board-grid")
+
+        boardGrid.addEventListener("click", (e) => {
+            if (!game) {
+                return
+            }
+            const cell = e.target.closest(".board-cell")
+            if (!cell) {
+                return
+            }
+            const cellID = cell.getAttribute("data-index")
+
+            if (board.getBoard()[cellID] !== "") {
+                return
+            }
+            const value = currPlayer.value
+            cell.innerHTML = value
+            board.setCell(cellID, value)
+            displayResult()
+            currPlayer = currPlayer === player1 ? player2 : player1
+
+        })
+    }
+
+    const displayResult = () => {
+        const topInfo = document.querySelector(".top-info")
+        const result = document.createElement("p")
+        result.className = "result"
+
+        if (board.checkDraw(currPlayer)) {
+            result.innerHTML = "The game is a draw"
+            game = false
+        }
+        if (board.checkWinner(currPlayer)) {
+            result.innerHTML = `${currPlayer.name} WINS!!`
+            
+            game = false
+        }
+
+        topInfo.appendChild(result)
+    }
+
+    return {addToCell, displayResult}
+}
+
+let display = handleDisplay()
+display.addToCell()

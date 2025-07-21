@@ -5,27 +5,39 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tic Tac Toe</title>
     <link rel="stylesheet" href="game.css">
+     <link href="https://fonts.googleapis.com/css2?family=Libertinus+Mono&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
     <script src="game.js" defer></script>
 </head>
 <body>
+    <dialog open class="setName">
+        
+        <div class="player-form" id="player1">
+            <label for="p1name" class="player-name">Player 1 Name</label>
+            <input type="text" name="p1name" id="p1name" class="player-input">
+        </div>
+        <div class="player-form" id="player2">
+            <label for="p2name" class="player-name">Player 2 Name</label>
+            <input type="text" name="p2name" id="p2name" class="player-input">
+        </div>
+    </dialog>
     <div class="top-info">
         <h1 class="title">Tic Tac Toe</h1>
         <div class="player-info">
-            <p class="player"><b>Player 1:</b> X</p>
-            <p class="player"><b>Player 2:</b> O</p>
+            <p class="player" style="font-family: Roboto;"><b style="font-family: Libertinus Mono;">Player 1:</b> X</p>
+            <p class="player" style="font-family: Roboto;"><b style="font-family: Libertinus Mono;">Player 2:</b> O</p>
         </div>
     </div>
     <div class="middle-grid">
         <div class="board-grid">
-            <div class="board-cell"></div>
-            <div class="board-cell"></div>
-            <div class="board-cell"></div>
-            <div class="board-cell"></div>
-            <div class="board-cell"></div>
-            <div class="board-cell"></div>
-            <div class="board-cell"></div>
-            <div class="board-cell"></div>
-            <div class="board-cell"></div>
+            <div class="board-cell" data-index="0"></div>
+            <div class="board-cell" data-index="1"></div>
+            <div class="board-cell" data-index="2"></div>
+            <div class="board-cell" data-index="3"></div>
+            <div class="board-cell" data-index="4"></div>
+            <div class="board-cell" data-index="5"></div>
+            <div class="board-cell" data-index="6"></div>
+            <div class="board-cell" data-index="7"></div>
+            <div class="board-cell" data-index="8"></div>
         </div>
     </div>
     

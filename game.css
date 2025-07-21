@@ -1,5 +1,13 @@
+body{
+    font-family: Libertinus Mono;
+}
+
 .top-info{
     text-align: center;
+}
+
+.title{
+    padding: 30px 0 0 10px;
 }
 
 .player-info{
@@ -7,6 +15,7 @@
     align-items: center;
     text-align: center;
     gap: 50px;
+    justify-content: center;
 }
 
 .player{
@@ -16,6 +25,7 @@
 
 .middle-grid{
     text-align: center;
+    padding: 10px 0;
 }
 
 .board-grid{
@@ -23,11 +33,23 @@
     border: solid black 2px;
     width: 360px;
     height: 360px;
-    grid-template-rows: repeat(3, auto);
-    grid-template-columns: repeat(3, auto);
-    
+    grid-template-rows: repeat(3, 120px);
+    grid-template-columns: repeat(3, 120px);
+    margin: 0 auto;    
 }
 
 .board-cell{
     border: solid black 2px;
+    box-sizing: border-box;
+    font-size: xx-large;
+    font-family: Roboto;
+    align-items: center;
+    justify-content: center;
+    line-height: 120px;
+}
+
+.result{
+    font-size: x-large;
+    color: red;
+    font-weight: bold;
 }
