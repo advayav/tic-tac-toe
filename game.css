@@ -1,0 +1,33 @@
+.top-info{
+    text-align: center;
+}
+
+.player-info{
+    display: flex;
+    align-items: center;
+    text-align: center;
+    gap: 50px;
+}
+
+.player{
+    font-size: 20px;
+}
+
+
+.middle-grid{
+    text-align: center;
+}
+
+.board-grid{
+    display: grid;
+    border: solid black 2px;
+    width: 360px;
+    height: 360px;
+    grid-template-rows: repeat(3, auto);
+    grid-template-columns: repeat(3, auto);
+    
+}
+
+.board-cell{
+    border: solid black 2px;
+}
