@@ -81,13 +81,6 @@ function turn(player, index) {
     }
 }
 
-
-let board = gameBoard()
-let player1 = createPlayer("Player 1", "X")
-let player2 = createPlayer("Player 2", "O")
-
-let currPlayer = player1
-
 // while (true) {
 //     let input = Number(prompt("Enter the index where you would like to play your move"))
 //     let result = turn(currPlayer, input)
@@ -99,6 +92,10 @@ let currPlayer = player1
 
 //     currPlayer = currPlayer === player1 ? player2 : player1
 // }
+
+let board = gameBoard()
+let player1, player2, currPlayer
+
 
 let handleDisplay = () => {
     let game = true
@@ -164,5 +161,50 @@ let handleDisplay = () => {
     return {addToCell, displayResult}
 }
 
-let display = handleDisplay()
-display.addToCell()
+
+const dialog = document.querySelector("dialog")
+const form = document.querySelector(".player-choice-form")
+console.log("dialog"+ dialog)
+
+let player1Name = ""
+let player2Name = ""
+
+let player1Value = ""
+let player2Value = ""
+
+// window.addEventListener("DOMContentLoaded", () => {
+//     dialog.showModal()
+// })
+
+
+form.addEventListener("submit", (e) => {
+    console.log("Submit button was clicked")
+    e.preventDefault()
+
+    player1Name = document.getElementById("p1name").value
+    player2Name = document.getElementById("p2name").value
+
+    player1Value = document.querySelector('input[name="p1value"]:checked').value;
+    player2Value = document.querySelector('input[name="p2value"]:checked').value;
+
+    if (!player1Name || !player2Name || !player1Value || !player2Value) {
+        alert("Please fill out all fields")
+        return
+    }
+
+    if (player1Value === player2Value) {
+        alert("Players must choose different symbols!")
+        return
+    }
+
+    player1 = createPlayer(player1Name, player1Value)
+    player2 = createPlayer(player2Name, player2Value)
+
+    currPlayer = player1
+
+    console.log("Before close")
+    dialog.remove()
+    console.log("After close")
+    let display = handleDisplay()
+    display.addToCell()
+})

@@ -58,3 +58,49 @@ body{
     color: red;
     font-weight: bold;
 }
+
+.player-choice{
+    display: block;
+    height: 300px;
+    width: 400px;
+    top: 25%;
+}
+
+
+.player-choice-form{
+    padding-bottom: 0 20px 20px 20px;
+}
+
+.player-form{
+    display: flex;
+    flex-direction: row;
+    gap: 30px;
+    align-items: center;
+    justify-content: center;
+    padding-bottom: 20px;
+}
+
+.player-title{
+    font-weight: bold;
+    font-size: x-large;
+}
+
+.player-name{
+    font-size: 18px;
+}
+
+.name-choice{
+    padding-bottom: 20px;
+}
+
+.value-choice{
+    font-family: Roboto;
+}
+
+.submit-btn{
+    padding: 10px 20px;
+    margin-left: 10px;
+    font-size: medium;
+    border-radius: 10px;
+
+}

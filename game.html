@@ -9,15 +9,42 @@
     <script src="game.js" defer></script>
 </head>
 <body>
-    <dialog open class="setName">
-        <div class="player-form" id="player1">
-            <label for="p1name" class="player-name">Player 1 Name</label>
-            <input type="text" name="p1name" id="p1name" class="player-input">
-        </div>
-        <div class="player-form" id="player2">
-            <label for="p2name" class="player-name">Player 2 Name</label>
-            <input type="text" name="p2name" id="p2name" class="player-input">
-        </div>
+    <dialog class="player-choice" open>
+        <form action="#" class="player-choice-form" method="dialog">
+            <div class="player-form">
+                <div class="player-info-choice" id="player1">
+                    <div class="name-choice">
+                        <p class="player-title">Player 1</p>
+                        <label for="p1name" class="player-name">Name</label> <br>
+                        <input type="text" name="p1name" id="p1name" class="player-input">
+                    </div>
+                    <div class="value-choice">
+                        <input type="radio" id="p1valueX" name="p1value" value="X">
+                        <label for="p1value">X</label> <br> <br>
+                        <input type="radio" id="p1valueO" name="p1value" value="O">
+                        <label for="p1value">O</label>
+                    </div>
+                </div>
+                <div class="player-info-choice" id="player2">
+                    <div class="name-choice">
+                        <p class="player-title">Player 2</p>
+                        <label for="p2name" class="player-name">Name</label> <br>
+                        <input type="text" name="p2name" id="p2name" class="player-input">
+                    </div>
+                    <div class="value-choice">
+                        <input type="radio" id="p2valueX" name="p2value" value="X">
+                        <label for="p2value">X</label> <br> <br>
+                        <input type="radio" id="p2valueO" name="p2value" value="O">
+                        <label for="p2value">O</label>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="close-form">
+                <button type="submit" class="submit-btn">Submit</button>
+            </div>
+        </form>
+        
     </dialog>
     <div class="top-info">
         <h1 class="title">Tic Tac Toe</h1>
