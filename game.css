@@ -48,7 +48,12 @@ body{
     line-height: 120px;
 }
 
-.result{
+.round-info{
+    font-size: x-large;
+    font-weight: bold;
+}
+
+#result{
     font-size: x-large;
     color: red;
     font-weight: bold;

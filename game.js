@@ -105,6 +105,12 @@ let handleDisplay = () => {
     const addToCell = () => {
         
         let boardGrid = document.querySelector(".board-grid")
+        
+        const round = document.querySelector(".round")
+        const playerTurn = document.createElement("p")
+        playerTurn.className = "round-info"
+        playerTurn.innerHTML = `${currPlayer.name}'s turn`
+        round.appendChild(playerTurn)
 
         boardGrid.addEventListener("click", (e) => {
             if (!game) {
@@ -125,13 +131,22 @@ let handleDisplay = () => {
             displayResult()
             currPlayer = currPlayer === player1 ? player2 : player1
 
+            if (game) {
+                playerTurn.innerHTML = `${currPlayer.name}'s turn`
+
+                round.appendChild(playerTurn)
+            }
+
+            
         })
     }
 
     const displayResult = () => {
-        const topInfo = document.querySelector(".top-info")
+        const round = document.querySelector(".round")
         const result = document.createElement("p")
-        result.className = "result"
+        round.innerHTML = ""
+        result.className = "round-info"
+        result.id = "result"
 
         if (board.checkDraw(currPlayer)) {
             result.innerHTML = "The game is a draw"
@@ -143,7 +158,7 @@ let handleDisplay = () => {
             game = false
         }
 
-        topInfo.appendChild(result)
+        round.appendChild(result)
     }
 
     return {addToCell, displayResult}
